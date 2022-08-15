@@ -1,8 +1,14 @@
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { createTodo } from '../apis';
 import { TodoBlock } from '../components';
+import useQuery from '../hooks/useQuery';
 import { PageLayout } from '../styles';
 
 export default function Main() {
+  const { todos, refetch } = useQuery();
+  const [todo, setTodo] = useState('');
+
   return (
     <PageLayout>
       <Inner>
@@ -12,12 +18,24 @@ export default function Main() {
             <div>오늘의날씨</div>
           </TodayInfo>
           <TodoRegister>
-            <textarea />
-            <button>등록</button>
+            <textarea value={todo} onChange={e => setTodo(e.target.value)} />
+            <button
+              onClick={() =>
+                createTodo(todo)
+                  .then(() => setTodo(''))
+                  .then(() => refetch())
+              }
+            >
+              등록
+            </button>
           </TodoRegister>
         </FormLayout>
         <TodoLayout>
-          <TodoBlock />
+          {todos?.map(todo => (
+            <React.Fragment key={todo.id}>
+              <TodoBlock todo={todo} refetch={refetch} />
+            </React.Fragment>
+          ))}
         </TodoLayout>
       </Inner>
     </PageLayout>
@@ -53,6 +71,7 @@ const TodoRegister = styled.div`
     width: 90%;
   }
   & > button {
+    cursor: pointer;
     width: 10%;
     height: 100%;
   }
