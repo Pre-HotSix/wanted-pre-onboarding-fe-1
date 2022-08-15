@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 interface IValidType {
   email: string;
-  emailConfirm?: string;
+  emailConfirm: string;
   password: string;
-  passwordConfirm?: string;
+  passwordConfirm: string;
 }
 
 export default function useValid(changeValue: IValidType) {
@@ -25,7 +25,7 @@ export default function useValid(changeValue: IValidType) {
       setValidText('');
       setIsValid({ ...isValid, isEmail: true });
     }
-  }, [changeValue.email]);
+  }, [changeValue.email, isValid.isEmail]);
 
   useEffect(() => {
     if (changeValue.email !== changeValue.emailConfirm) {
@@ -35,7 +35,7 @@ export default function useValid(changeValue: IValidType) {
       setValidText('');
       setIsValid({ ...isValid, isEmailConfirm: true });
     }
-  }, [changeValue.emailConfirm]);
+  }, [changeValue.emailConfirm, isValid.isEmailConfirm]);
 
   useEffect(() => {
     if (changeValue.password.length < 8) {
@@ -45,7 +45,7 @@ export default function useValid(changeValue: IValidType) {
       setValidText('');
       setIsValid({ ...isValid, isPassword: true });
     }
-  }, [changeValue.password]);
+  }, [changeValue.password, isValid.isPassword]);
 
   useEffect(() => {
     if (changeValue.password !== changeValue.passwordConfirm) {
@@ -55,7 +55,7 @@ export default function useValid(changeValue: IValidType) {
       setValidText('');
       setIsValid({ ...isValid, isPasswordConfirm: true });
     }
-  }, [changeValue.passwordConfirm]);
+  }, [changeValue.passwordConfirm, isValid.isPasswordConfirm]);
 
   return { validText, isValid };
 }
