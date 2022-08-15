@@ -18,7 +18,7 @@ export default function SignUp() {
 
   const signUp = () => {
     signUpApi({ email: form.email, password: form.password })
-      .then(res => localStorage.setItem('access_token', JSON.stringify(res)))
+      .then(res => localStorage.setItem('access_token', res))
       .then(() => navigate('/todo'));
   };
 
