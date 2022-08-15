@@ -8,6 +8,3 @@ export interface ITodo {
   isCompleted?: boolean;
   userId?: number;
 }
-export interface ITodos {
-  todos: ITodo[];
-}
