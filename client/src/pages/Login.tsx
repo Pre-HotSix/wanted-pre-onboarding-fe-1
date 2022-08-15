@@ -10,13 +10,15 @@ export default function Login() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
     email: '',
+    emailConfirm: '',
     password: '',
+    passwordConfirm: '',
   });
   const { validText, isValid } = useValid(form);
 
   const login = () => {
-    loginApi(form)
-      .then(res => localStorage.setItem('access_token', JSON.stringify(res)))
+    loginApi({ email: form.email, password: form.password })
+      .then(res => localStorage.setItem('access_token', res))
       .then(() => navigate('/todo'));
   };
 
