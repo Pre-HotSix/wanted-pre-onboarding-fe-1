@@ -79,10 +79,9 @@ https://pre-onboarding-hotsix.netlify.app/
 1 . 자주 사용하는 색깔들을 styledComponent의 theme을 이용해서 선언했습니다.
 이유 : 유지보수를 높이기 위함,  일관성있는 UI를 만들수 있으며, 그리고 컴포넌트처럼 재사용해서 사용할수 있다고 생각했습니다.
 
-### Router 기능 폴더 정리
-
-1. private, public 등 토큰 유무에 따른 경로 접근 컴포넌트 정리
-2. Router.tsx를 해당 폴더에 분류
+### Redirect를 Protected Route개념으로 핸들링
+1 . Protected Route개념으로 Redirect를 해결했습니다.
+이유 : 기존에 페이지에서 mount시 useNavigation으로 페이지 이동했습니다. 하지만 이는 페이지를 직접 이동했다가 돌아가는 화면깜빡임현상이 있었고 , 이를 보완하기위해 라우팅에서 유효성을 검사해 페이지 이동을 막았습니다.
 
 ### 토큰정보를 api요청에 담아 헤더로 보낼시 null로 담기는 에러 해결
 
