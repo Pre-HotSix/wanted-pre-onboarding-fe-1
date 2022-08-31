@@ -66,30 +66,31 @@ https://pre-onboarding-hotsix.netlify.app/
 ## Best Practice
 
 ### Api 함수 로직 분리
-1. 사용하는 api들을 apis폴더내에 파일로 선언해서 사용했습니다.
+1. 사용하는 api들을 apis폴더내에 파일로 선언해서 사용했습니다.  
 **이유** : 원래는 페이지내에서 함수를 선언하고 호출했었는데, 이는 서비스로직은 따로 관리해야된다 생각했고, apis에 따로 선언해서 재사용성을 높였습니다.
-2. 사용하는 api들을 기능에 맞게 분할해서 선언했습니다.
+2. 사용하는 api들을 기능에 맞게 분할해서 선언했습니다.  
 **이유** : todoApi.ts와 userApi.ts를 기능에 따라 나눴는데, 서비스 목적에 따라 관리할수 있는 장점이 있다고 생각했습니다.
 
 ### Todo 페이지
-1. useQuery 커스텀훅 생성
+1. useQuery 커스텀훅 생성  
 **이유** : 추상화 + todo관련 api요청시 화면에 내용 최신화
 
 ### themes로 자주 쓰이는 색상 핸들링
-1 . 자주 사용하는 색깔들을 styledComponent의 theme을 이용해서 선언했습니다.
+1 . 자주 사용하는 색깔들을 styledComponent의 theme을 이용해서 선언했습니다.  
 **이유** : 유지보수를 높이기 위함,  일관성있는 UI를 만들수 있으며, 그리고 컴포넌트처럼 재사용해서 사용할수 있다고 생각했습니다.
 
 ### Redirect를 Protected Route개념으로 핸들링
-1 . Protected Route개념으로 Redirect를 해결했습니다.
+1 . Protected Route개념으로 Redirect를 해결했습니다.  
 **이유** : 기존에 페이지에서 mount시 useNavigation으로 페이지 이동했습니다. 하지만 이는 페이지를 직접 이동했다가 돌아가는 화면깜빡임현상이 있었고 , 이를 보완하기위해 라우팅에서 유효성을 검사해 페이지 이동을 막았습니다.
 
 ### 토큰정보를 api요청에 담아 헤더로 보낼시 null로 담기는 에러 해결
 1.회원가입 및 로그인 후에 투두리스트를 가져오기 위한 getTodos 를 요청하는데에 필요한 access_token값을 localStorage.getItem('access_token') 으로 이용하여 index.ts파일에서 가져왔었는데, 이 부분에서 index.ts파일에서는localStorage.getItem('access_token') 값을 페이지 mount시 불러오기때문에  null 값을 가져오고 로그인 or 회원가입 후 access_token값이 업데이트 되지않아 headers값에 계속 null값이 들어가는 문제가 일어났습니다.
-**해결방안** : getTodos, createTodo, updateTodo, removeTodo 함수에 
+  
+**해결방안** : getTodos, createTodo, updateTodo, removeTodo 함수에  
 const token = localStorage.getItem('access_token');
 headers = {Authorization : bearer ${token} }
 추가하여 해결했습니다.
 
 ### 로그인 회원가입 유효성 해결
-1.useValidText를 사용해서 다소 장황할수 있는 valid함수를 useEffect로직에 포함시켜 훅 외부에서 사용할때 보다 간단한 return타입으로 사용할 수 있게 만들었습니다.
+1.useValidText를 사용해서 다소 장황할수 있는 valid함수를 useEffect로직에 포함시켜 훅 외부에서 사용할때 보다 간단한 return타입으로 사용할 수 있게 만들었습니다.  
 **이유** : 유효성검사를 통해 필요한 UI요소가 유효성검사 결과 텍스트, 유효성 검사 boolean이 였기에 해당 방법을 도입했습니다.
