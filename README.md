@@ -66,10 +66,10 @@ https://pre-onboarding-hotsix.netlify.app/
 ## Best Practice
 
 ### Api 함수 세분화
-
-1. index.ts에 token, apiClient 와 같은 공통 변수를 제외한 get,put 등 메서드 용도별로 분류
-2. todoApi.ts 에 Todo관련한 get,post,put,delete 메서드 정리
-3. userApi.ts 에 유저 관련한 get,post,put,delete 메서드 정리
+1. 사용하는 api들을 apis폴더내에 파일로 선언해서 사용했습니다.
+이유 : 원래는 페이지내에서 함수를 선언하고 호출했었는데, 이는 서비스로직은 따로 관리해야된다 생각했고, apis에 따로 선언해서 재사용성을 높였습니다.
+2. 사용하는 api들을 기능에 맞게 분할해서 선언했습니다.
+이유 : todoApi.ts와 userApi.ts를 기능에 따라 나눴는데, 서비스 목적에 따라 관리할수 있는 장점이 있다고 생각했습니다.
 
 ### Todo의 작성 취소 기능 추가
 
@@ -86,4 +86,5 @@ https://pre-onboarding-hotsix.netlify.app/
 
 ### 토큰정보를 api요청에 담아 헤더로 보낼시 null로 담기는 에러 해결
 
-1. 
+
+회원가입 및 로그인 후에 투두리스트를 가져오기 위한 getTodos 를 요청하는데에 필요한 access_token값을 localStorage.getItem('access_token') 으로 이용하여 index.ts파일에서 가져왔었는데, 이 부분에서 index.ts파일에서 가져오는 localStorage.getItem('access_token') 값은 null 이고 업데이트 되지않아 headers값에 계속 null값이 들어가서 문제가 일어났었음
