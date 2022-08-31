@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Input } from '../components';
 import { PageLayout, FormInner, FormLayout } from '../styles';
-import { loginApi } from '../apis';
+
 import { useState } from 'react';
 import useValid from '../hooks/useValid';
+import { loginApi } from '../apis/userApi';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -22,6 +23,12 @@ export default function Login() {
       .then(() => navigate('/todo'));
   };
 
+  const handleSubmit = (e: any) => {
+    if (isValid.isEmail && isValid.isPassword && e.key === 'Enter') {
+      login();
+    }
+  };
+
   return (
     <PageLayout>
       <FormLayout>
@@ -34,6 +41,7 @@ export default function Login() {
               value={form.email}
               onChange={e => setForm({ ...form, email: e.target.value })}
               valid={!isValid.isEmail}
+              handleSubmit={handleSubmit}
             />
             <Input
               place="비밀번호를 입력하세요"
@@ -41,6 +49,7 @@ export default function Login() {
               value={form.password}
               onChange={e => setForm({ ...form, password: e.target.value })}
               valid={!isValid.isPassword}
+              handleSubmit={handleSubmit}
             />
             <div>
               <span>계정이 없으신가요?</span>

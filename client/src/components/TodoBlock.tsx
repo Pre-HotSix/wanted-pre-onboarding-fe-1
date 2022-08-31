@@ -5,9 +5,10 @@ import {
   AiFillDelete,
   AiOutlineCheck,
 } from 'react-icons/ai';
-import { removeTodo, updateTodo } from '../apis';
+
 import { useState } from 'react';
 import { ITodo } from '../types';
+import { removeTodo, updateTodo } from '../apis/todoApi';
 
 interface Prop {
   todo: ITodo;

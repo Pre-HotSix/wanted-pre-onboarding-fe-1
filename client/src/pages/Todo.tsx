@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import styled from 'styled-components';
-import { createTodo } from '../apis';
+import { createTodo } from '../apis/todoApi';
+
 import { TodoBlock } from '../components';
 import useQuery from '../hooks/useQuery';
 import { PageLayout } from '../styles';
 
-export default function Main() {
+export default function Todo() {
   const { todos, refetch } = useQuery();
   const [todo, setTodo] = useState('');
 
@@ -13,12 +14,12 @@ export default function Main() {
     <PageLayout>
       <Inner>
         <FormLayout>
-          <TodayInfo>
-            <div>2022.08.14</div>
-            <div>오늘의날씨</div>
-          </TodayInfo>
           <TodoRegister>
-            <textarea value={todo} onChange={e => setTodo(e.target.value)} />
+            <input
+              type="text"
+              value={todo}
+              onChange={e => setTodo(e.target.value)}
+            />
             <button
               onClick={() =>
                 createTodo(todo)
@@ -32,9 +33,9 @@ export default function Main() {
         </FormLayout>
         <TodoLayout>
           {todos?.map(todo => (
-            <React.Fragment key={todo.id}>
+            <Fragment key={todo.id}>
               <TodoBlock todo={todo} refetch={refetch} />
-            </React.Fragment>
+            </Fragment>
           ))}
         </TodoLayout>
       </Inner>
@@ -56,18 +57,11 @@ const FormLayout = styled.div`
   border-bottom: 1px solid black;
   border-radius: 5rem 5rem 0 0;
 `;
-const TodayInfo = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 1rem;
-  margin-right: 3rem;
-  margin-bottom: 2rem;
-`;
 const TodoRegister = styled.div`
   display: flex;
   align-items: center;
   margin: 0 3rem;
-  & > textarea {
+  & > input {
     width: 90%;
   }
   & > button {

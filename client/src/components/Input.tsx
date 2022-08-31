@@ -7,6 +7,7 @@ interface Prop {
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   valid?: boolean;
+  handleSubmit?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
 export default function Input(props: Prop) {
@@ -17,6 +18,7 @@ export default function Input(props: Prop) {
         placeholder={props.place}
         value={props.value}
         onChange={props.onChange}
+        onKeyPress={props.handleSubmit}
       />
     </Container>
   );
