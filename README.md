@@ -14,7 +14,7 @@
 ## 실행 방법
 레포지토리를 `clone` 합니다
 ```markdown
-$ git clone https://github.com/
+$ git clone https://github.com/Pre-HotSix/wanted-pre-onboarding-fe-1.git
 ```
 package를 설치합니다
 ```markdown
