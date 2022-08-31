@@ -1,5 +1,7 @@
 import axios, { AxiosRequestHeaders } from 'axios';
 
+export const token = localStorage.getItem('access_token');
+
 export const apiClient = axios.create({
   baseURL: process.env.REACT_APP_SERVER_API_KEY,
   headers: {
@@ -8,5 +10,5 @@ export const apiClient = axios.create({
 });
 
 export const headers: AxiosRequestHeaders = {
-  Authorization: `Bearer ${localStorage.getItem('access_token')}` || '',
+  Authorization: `Bearer ${token}`,
 };
