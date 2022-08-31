@@ -51,7 +51,7 @@ export default function useValid(changeValue: IValidType) {
     if (changeValue.password !== changeValue.passwordConfirm) {
       setValidText('비밀번호가 다릅니다');
       setIsValid({ ...isValid, isPasswordConfirm: false });
-    } else {
+    } else if (changeValue.password === changeValue.passwordConfirm) {
       setValidText('');
       setIsValid({ ...isValid, isPasswordConfirm: true });
     }
