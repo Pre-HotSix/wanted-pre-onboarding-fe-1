@@ -63,10 +63,8 @@ export default function SignUp() {
               buttonText="회원가입 완료"
               clickEvent={signUp}
               isActive={
-                isValid.isEmail &&
-                isValid.isPassword &&
-                isValid.isEmailConfirm &&
-                isValid.isPasswordConfirm
+                (isValid.isEmail && isValid.isPassword) === true &&
+                (isValid.isEmailConfirm && isValid.isPasswordConfirm) === true
                   ? false
                   : true
               }
