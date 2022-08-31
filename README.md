@@ -73,7 +73,7 @@ https://pre-onboarding-hotsix.netlify.app/
 
 ### Todo 페이지
 1. useQuery 커스텀훅 생성
-**이유** : 
+**이유** : 추상화 + todo관련 api요청시 화면에 내용 최신화
 
 ### themes로 자주 쓰이는 색상 핸들링
 1 . 자주 사용하는 색깔들을 styledComponent의 theme을 이용해서 선언했습니다.
@@ -89,3 +89,7 @@ https://pre-onboarding-hotsix.netlify.app/
 const token = localStorage.getItem('access_token');
 headers = {Authorization : bearer ${token} }
 추가하여 해결했습니다.
+
+### 로그인 회원가입 유효성 해결
+1. useValid 커스텀 훅 사용
+**이유** : 
