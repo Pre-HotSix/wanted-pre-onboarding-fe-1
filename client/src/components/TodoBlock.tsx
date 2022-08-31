@@ -5,6 +5,7 @@ import {
   AiFillDelete,
   AiOutlineCheck,
 } from 'react-icons/ai';
+import { GiCancel } from 'react-icons/gi';
 
 import { useState } from 'react';
 import { ITodo } from '../types';
@@ -40,6 +41,11 @@ export default function TodoBlock({ todo, refetch }: Prop) {
       .then(() => setIsEdit(false));
   };
 
+  const editCancel = () => {
+    setIsEdit(false);
+    setContent({ ...content, todo: todo.todo });
+  };
+
   return (
     <Container>
       <Inner>
@@ -59,7 +65,10 @@ export default function TodoBlock({ todo, refetch }: Prop) {
         </TextCol>
         <EditCol>
           {isEdit ? (
-            <AiOutlineCheck onClick={updateEdit} />
+            <>
+              <GiCancel onClick={editCancel} />
+              <AiOutlineCheck onClick={updateEdit} />
+            </>
           ) : (
             <AiFillEdit onClick={() => setIsEdit(prev => !prev)} />
           )}
@@ -96,7 +105,7 @@ const TextCol = styled.div<{ isComplete?: boolean }>`
   display: flex;
   flex-wrap: wrap;
   font-size: 2rem;
-  width: 75%;
+  width: 65%;
   text-decoration: ${prop => (prop.isComplete ? 'line-through' : 'none')};
   & > input {
     width: 100%;
@@ -108,8 +117,9 @@ const EditCol = styled.div`
     width: 2rem;
     height: 2rem;
   }
-  & > svg:first-child {
+  svg:first-child,
+  svg:nth-child(2) {
     cursor: pointer;
-    margin: 0 1rem;
+    margin-right: 1rem;
   }
 `;
