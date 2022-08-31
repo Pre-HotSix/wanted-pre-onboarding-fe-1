@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import styled from 'styled-components';
 import { createTodo } from '../apis/todoApi';
 
@@ -6,7 +6,7 @@ import { TodoBlock } from '../components';
 import useQuery from '../hooks/useQuery';
 import { PageLayout } from '../styles';
 
-export default function Todo() {
+export default function Main() {
   const { todos, refetch } = useQuery();
   const [todo, setTodo] = useState('');
 

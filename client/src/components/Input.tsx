@@ -30,6 +30,8 @@ const Container = styled.div<{ isValid?: boolean }>`
   & > input {
     width: 80%;
     height: 3rem;
-    border: 1px solid ${prop => (prop.isValid ? 'red' : 'black')};
+    border: 1px solid
+      ${props =>
+        props.isValid ? props.theme.colors.RED : props.theme.colors.BLACK};
   }
 `;

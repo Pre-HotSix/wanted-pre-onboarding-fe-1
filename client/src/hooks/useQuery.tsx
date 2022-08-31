@@ -4,14 +4,13 @@ import { ITodo } from '../types';
 
 export default function useQuery() {
   const [todos, setTodos] = useState<ITodo[]>();
-  const refetch = () => getTodos().then((res: any) => setTodos(res));
+  const refetch = async () => {
+    const data = await getTodos();
+    setTodos(data);
+  };
 
   useEffect(() => {
-    const token = localStorage.getItem('access_token');
-    if (token !== null) {
-      const get = async () => await getTodos();
-      get();
-    }
+    refetch();
   }, []);
 
   return { todos, refetch };
