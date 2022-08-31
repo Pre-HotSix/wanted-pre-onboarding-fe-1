@@ -21,9 +21,9 @@ const Container = styled.div<{ isActive?: boolean }>`
   text-align: center;
   & > button {
     width: 50%;
-    background-color: ${prop =>
-      prop.isActive ? prop.theme.colors.GREY : prop.theme.colors.RED};
-    cursor: ${prop => (prop.isActive ? 'auto' : 'pointer')};
+    background-color: ${props =>
+      props.isActive ? props.theme.colors.GREY : props.theme.colors.RED};
+    cursor: ${props => (props.isActive ? 'auto' : 'pointer')};
     border: none;
     border-radius: 3rem;
     color: white;

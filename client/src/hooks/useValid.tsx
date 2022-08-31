@@ -15,7 +15,6 @@ export default function useValid(changeValue: IValidType) {
     isPassword: false,
     isPasswordConfirm: false,
   });
-
   useEffect(() => {
     const exp = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
     if (!exp.test(changeValue.email)) {
@@ -51,7 +50,10 @@ export default function useValid(changeValue: IValidType) {
     if (changeValue.password !== changeValue.passwordConfirm) {
       setValidText('비밀번호가 다릅니다');
       setIsValid({ ...isValid, isPasswordConfirm: false });
-    } else if (changeValue.password === changeValue.passwordConfirm) {
+    } else if (
+      changeValue.password.length > 0 &&
+      changeValue.password === changeValue.passwordConfirm
+    ) {
       setValidText('');
       setIsValid({ ...isValid, isPasswordConfirm: true });
     }
