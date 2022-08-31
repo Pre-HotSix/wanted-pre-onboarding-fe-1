@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { getTodos } from '../apis/todoApi';
-
 import { ITodo } from '../types';
 
 export default function useQuery() {
@@ -8,7 +7,11 @@ export default function useQuery() {
   const refetch = () => getTodos().then((res: any) => setTodos(res));
 
   useEffect(() => {
-    getTodos().then(res => setTodos(res));
+    const token = localStorage.getItem('access_token');
+    if (token !== null) {
+      const get = async () => await getTodos();
+      get();
+    }
   }, []);
 
   return { todos, refetch };
