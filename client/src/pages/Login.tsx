@@ -6,6 +6,7 @@ import { PageLayout, FormInner, FormLayout } from '../styles';
 import { useState } from 'react';
 import useValid from '../hooks/useValid';
 import { loginApi } from '../apis/userApi';
+import { token } from '../apis';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -17,9 +18,9 @@ export default function Login() {
   });
   const { validText, isValid } = useValid(form);
 
-  const login = () => {
-    loginApi({ email: form.email, password: form.password })
-      .then(res => localStorage.setItem('access_token', res))
+  const login = async () => {
+    return await loginApi({ email: form.email, password: form.password })
+      .then((res): any => localStorage.setItem('access_token', res))
       .then(() => navigate('/todo'));
   };
 
