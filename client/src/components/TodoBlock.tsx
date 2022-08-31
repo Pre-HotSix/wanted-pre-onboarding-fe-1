@@ -105,7 +105,7 @@ const TextCol = styled.div<{ isComplete?: boolean }>`
   display: flex;
   flex-wrap: wrap;
   font-size: 2rem;
-  width: 65%;
+  width: 75%;
   text-decoration: ${prop => (prop.isComplete ? 'line-through' : 'none')};
   & > input {
     width: 100%;
@@ -117,9 +117,8 @@ const EditCol = styled.div`
     width: 2rem;
     height: 2rem;
   }
-  svg:first-child,
-  svg:nth-child(2) {
+  & > svg:first-child {
     cursor: pointer;
-    margin-right: 1rem;
+    margin: 0 1rem;
   }
 `;

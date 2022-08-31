@@ -1,9 +1,13 @@
 type Colors = {
-  MAIN_BG: string;
+  RED: '#FF0000';
+  BLACK: '#000000';
+  GREY: '#415867';
 };
 
 const colors: Colors = {
-  MAIN_BG: '#c98128',
+  RED: '#FF0000',
+  BLACK: '#000000',
+  GREY: '#415867',
 };
 
 const theme = {
