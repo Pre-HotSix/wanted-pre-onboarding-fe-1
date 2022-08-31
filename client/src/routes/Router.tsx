@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
-import { Main, Login, SignUp } from './pages';
-import PrivateRoute from './utils/PrivateRoute';
-import PublicRoute from './utils/PublicRoute';
+import { Login, SignUp, Todo } from '../pages';
+import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 
 export default function Router() {
   return (
@@ -26,7 +26,7 @@ export default function Router() {
         path="/todo"
         element={
           <PrivateRoute>
-            <Main />
+            <Todo />
           </PrivateRoute>
         }
       />

@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { Button, Input } from '../components';
 import { PageLayout, FormInner, FormLayout } from '../styles';
-import { signUpApi } from '../apis';
+
 import { useState } from 'react';
 import useValid from '../hooks/useValid';
+import { signUpApi } from '../apis/userApi';
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ export default function SignUp() {
 
   const signUp = () => {
     signUpApi({ email: form.email, password: form.password })
-      .then(res => localStorage.setItem('access_token', res))
+      .then((res: any) => localStorage.setItem('access_token', res))
       .then(() => navigate('/todo'));
   };
 
