@@ -30,7 +30,7 @@ $ npm start
 
 1. 최상위 폴더에 `.env` 파일을 생성합니다.
 2. REACT_APP_SERVER_API_KEY을 설정해 줍니다.
-3. 환경 변수의 `key`값은 []()
+3. 환경 변수의 `key`값은 저희 api 주소입니다.
 <br/>
 
 ## 폴더구조
