@@ -91,5 +91,5 @@ headers = {Authorization : bearer ${token} }
 추가하여 해결했습니다.
 
 ### 로그인 회원가입 유효성 해결
-1. useValid 커스텀 훅 사용
-**이유** : 
+1.useValidText를 사용해서 다소 장황할수 있는 valid함수를 useEffect로직에 포함시켜 훅 외부에서 사용할때 보다 간단한 return타입으로 사용할 수 있게 만들었습니다.
+**이유** : 유효성검사를 통해 필요한 UI요소가 유효성검사 결과 텍스트, 유효성 검사 boolean이 였기에 해당 방법을 도입했습니다.
