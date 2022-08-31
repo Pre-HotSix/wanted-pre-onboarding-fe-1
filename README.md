@@ -65,7 +65,7 @@ https://pre-onboarding-hotsix.netlify.app/
 
 ## Best Practice
 
-### Api 함수 세분화
+### Api 함수 로직 분리
 1. 사용하는 api들을 apis폴더내에 파일로 선언해서 사용했습니다.
 이유 : 원래는 페이지내에서 함수를 선언하고 호출했었는데, 이는 서비스로직은 따로 관리해야된다 생각했고, apis에 따로 선언해서 재사용성을 높였습니다.
 2. 사용하는 api들을 기능에 맞게 분할해서 선언했습니다.
@@ -76,8 +76,8 @@ https://pre-onboarding-hotsix.netlify.app/
 1. 작성된 투두의 편집 진행 중 취소를 누를경우 원래의 투두 컨텐츠로 fallback
 
 ### themes로 자주 쓰이는 색상 핸들링
-
-1. 명료하게 RED,BLACK,GRAY등을 사용해서 styled-components에 prop으로 명확한 색상 입력 기능 추가
+1 . 자주 사용하는 색깔들을 styledComponent의 theme을 이용해서 선언했습니다.
+이유 : 유지보수를 높이기 위함,  일관성있는 UI를 만들수 있으며, 그리고 컴포넌트처럼 재사용해서 사용할수 있다고 생각했습니다.
 
 ### Router 기능 폴더 정리
 
