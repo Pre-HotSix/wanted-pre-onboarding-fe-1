@@ -11,6 +11,28 @@
 |[강다현](https://github.com/KKangdaa)|프론트엔드| |
 |[임성훈](https://github.com/sasumpi123)|프론트엔드| |
 
+## 실행 방법
+레포지토리를 `clone` 합니다
+```markdown
+$ git clone https://github.com/
+```
+package를 설치합니다
+```markdown
+$ npm install
+```
+프로젝트를 실행합니다
+```markdown
+$ npm start
+```
+<br/>
+
+**프로젝트 실행 전**
+
+1. 최상위 폴더에 `.env` 파일을 생성합니다.
+2. REACT_APP_SERVER_API_KEY을 설정해 줍니다.
+3. 환경 변수의 `key`값은 []()
+<br/>
+
 ## 폴더구조
 
 ```
