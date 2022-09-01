@@ -1,8 +1,9 @@
-# 🦖원티드 프리온보딩 선발과제
+# 원티드 프리온보딩 프론트엔드 코스 1차 과제
 
 ## 배포링크
 
 https://pre-onboarding-hotsix.netlify.app/
+<br/>
 
 ## 팀원들을 소개합니다.
 
@@ -12,8 +13,9 @@ https://pre-onboarding-hotsix.netlify.app/
 |[손우영](https://github.com/dndud2906)|프론트엔드|프리온보딩 기반으로 하루빨리 이직|
 |[이종호](https://github.com/devfrank9)|프론트엔드|원피스 완결 전에 오픈소스 컨트리뷰터 달기|
 |[민유경](https://github.com/MINYUKYUNG)|프론트엔드|10월 안에 취직!|
-|[강다현](https://github.com/KKangdaa)|프론트엔드| |
+|[강다현](https://github.com/KKangdaa)|프론트엔드|실무를 아는 신입개발자 되기|
 |[임성훈](https://github.com/sasumpi123)|프론트엔드| |
+<br/>
 
 ## 실행 방법
 
@@ -35,7 +37,7 @@ $ npm start
 
 1. 최상위 폴더에 `.env` 파일을 생성합니다.
 2. REACT_APP_SERVER_API_KEY을 설정해 줍니다.
-3. 환경 변수의 `key`값은 저희 api 주소입니다.
+3. 환경 변수의 `key`값은 https://n38lcff1wk.execute-api.ap-northeast-2.amazonaws.com/ 입니다.
 <br/>
 
 ## 폴더구조
@@ -74,6 +76,7 @@ root
 |styles|전역으로 사용하는 style 관리 폴더|
 |theme|재사용을 위한 CSS 관리 폴더|
 |types|타입정의를 관리하는 폴더|
+<br/>
 
 ## Best Practice
 
