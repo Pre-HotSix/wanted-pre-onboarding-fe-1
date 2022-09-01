@@ -4,7 +4,7 @@
 
 |멤버|담당|포부|
 |:--|:--|:--|
-|[김승모](https://github.com/endmoseung)|프론트엔드| |
+|[김승모(팀장)](https://github.com/endmoseung)|프론트엔드|프리온보딩 코스 수료후 관련기업 취업성공!|
 |[손우영](https://github.com/dndud2906)|프론트엔드| |
 |[이종호](https://github.com/devfrank9)|프론트엔드|원피스 완결 전에 오픈소스 컨트리뷰터 달기|
 |[민유경](https://github.com/MINYUKYUNG)|프론트엔드| |
