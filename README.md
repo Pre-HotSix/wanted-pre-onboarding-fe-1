@@ -1,8 +1,18 @@
 # 🎉 원티드 프리온보딩 프론트엔드 코스 1차 과제
 
-## 배포링크
+## 배포 링크
 
 https://pre-onboarding-hotsix.netlify.app/
+- TEST 이메일
+  ```
+  hihello@naver.com
+  ```
+- TEST 비밀번호
+  ```
+  qwerasdf
+  ```
+- 회원가입 시 나만 접근가능한 todolist를 사용할 수 있습니다.
+- 보안 상 실제 사용하고 계신 이메일과 패스워드말고 임시 이메일, 비밀번호 사용을 권장드립니다.
 <br/>
 <br/>
 
@@ -41,7 +51,7 @@ $ npm start
 3. 환경 변수의 `key`값은 https://n38lcff1wk.execute-api.ap-northeast-2.amazonaws.com/ 입니다.
 <br/>
 
-## 폴더구조
+## 폴더 구조
 
 ```
 root
