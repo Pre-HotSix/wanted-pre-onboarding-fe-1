@@ -116,3 +116,19 @@ root
 - 회원가입 및 로그인 후에 투두리스트를 가져오기 위한 getTodos를 요청하는데 필요한 access_token값을, localStorage를 이용하여 index.ts파일에서 가져왔었습니다.  
 그러나, index.ts파일에서는 access_token값을 페이지 mount시 불러오기 때문에, null값을 가져온후 로그인 or 회원가입 로직이 돌아가서 access_token값이 업데이트 되지않았고, headers에 null값이 들어가는 문제가 일어났습니다.  
 💡 **해결방안** : getTodos, createTodo, updateTodo, removeTodo 함수에서 token을 직접적으로 받아온 후, headers를 추가한 API를 요청하여 해결했습니다.
+
+## 실시간 세션 FeedBack
+
+1. 불필요한 Fragment를 없애자
+
+<img width="326" alt="image" src="https://user-images.githubusercontent.com/90244663/188084483-1e4a6395-0989-4258-8c8d-04da23aaaf2e.png">
+<img width="395" alt="image" src="https://user-images.githubusercontent.com/90244663/188084578-52a9f12a-f609-45ce-988b-5319bd60e7bf.png">
+
+💡 여러가지 컴포넌트들을 묶어줄때 말고 불필요한 Fragment를 사용하지 말자.
+
+2. 코드의 가독성을 떨어트리는 inline handler 지양
+
+<img width="278" alt="image" src="https://user-images.githubusercontent.com/90244663/188084626-e16e343a-eebf-426e-b1d3-46beca780e2d.png">
+<img width="377" alt="image" src="https://user-images.githubusercontent.com/90244663/188084764-934178ce-c66d-40ce-8501-078c3a5d729d.png">
+
+💡 한 줄에서 끝나는 경우가 아닌 두줄 이상의 로직을 inline에 넣을 경우 따로 함수를 만들어 달아주자. (가독성)
