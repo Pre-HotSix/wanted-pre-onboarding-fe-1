@@ -119,14 +119,14 @@ root
 
 ## 실시간 세션 FeedBack
 
-1. 불필요한 Fragment를 없애자
+### 1. 불필요한 Fragment를 없애자
 
 <img width="326" alt="image" src="https://user-images.githubusercontent.com/90244663/188084483-1e4a6395-0989-4258-8c8d-04da23aaaf2e.png">
 <img width="395" alt="image" src="https://user-images.githubusercontent.com/90244663/188084578-52a9f12a-f609-45ce-988b-5319bd60e7bf.png">
 
 💡 여러가지 컴포넌트들을 묶어줄때 말고 불필요한 Fragment를 사용하지 말자.
 
-2. 코드의 가독성을 떨어트리는 inline handler 지양
+### 2. 코드의 가독성을 떨어트리는 inline handler 지양
 
 <img width="278" alt="image" src="https://user-images.githubusercontent.com/90244663/188084626-e16e343a-eebf-426e-b1d3-46beca780e2d.png">
 <img width="377" alt="image" src="https://user-images.githubusercontent.com/90244663/188084764-934178ce-c66d-40ce-8501-078c3a5d729d.png">
